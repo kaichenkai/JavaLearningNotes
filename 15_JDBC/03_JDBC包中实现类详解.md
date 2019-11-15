@@ -38,7 +38,7 @@
 
    `Statement  createStatement();`
 
-   `PreparedStatement prepareStatement(String sql)`
+   `PreparedStatement prepareStatement(String sql);`
 
    
 
