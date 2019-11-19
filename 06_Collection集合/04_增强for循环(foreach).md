@@ -2,13 +2,13 @@
 
 简化迭代器的编写(JDK1.5之后特性)
 
-
-
 > for  (元素类型  变量名 : 集合/数组) {
 >
 > ​	System.out.println(变量名)
 >
 > }
+
+**IDEA 快捷键: iter + Enter**
 
 
 
@@ -30,6 +30,10 @@ public class Main {
 ```
 
 
+
+
+
+###### 完 !
 
 
 
