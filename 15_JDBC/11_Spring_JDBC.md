@@ -42,7 +42,8 @@ Spring 框架对 JDBC 的简单封装, 提供了一个 JDBCTemplate 对象简化
 
      
 
-   + `queryForObject()`: 查询结果, 将结果封装为一些基本类型对象. (多用于 sql 聚合函数)
+   + `queryForObject()`: 查询结果, 将结果封装为一些基本类型对象, (多用于 sql 聚合函数), 也可以用来查询单个的 JavaBean 对象
+
 
 
 

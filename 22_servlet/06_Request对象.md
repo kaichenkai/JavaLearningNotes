@@ -151,6 +151,65 @@
 
 
 
+##### Request 请求转发
+
+一种在服务器内部的资源跳转方式
+
+步骤: 
+
+1. 通过 request 对象获取转发器对象: `RequestDispatcher getRequestDispatcher(String path);`
+2. 使用转发器对象进行转发: `void forward(ServletRequest var1, ServletResponse var2);`
+
+```java
+@WebServlet("/demo7")
+public class Servlet_07_HttpServlet请求转发 extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // 获取请求转发器, 调用方法转发
+        request.getRequestDispatcher("/demo8").forward(request, response);
+    }
+}
+```
+
+
+
+##### Request 共享数据
+
+域对象: 一个有作用域的对象, 可以共享数据
+
+request 域: 代表一次请求的范围, 一般用于请求转发的多个资源中共享数据.
+
+方法: 
+
+1. `void setAttribute(String name, Object obj)`: 存储数据 ( 在转发之前设置 )
+2. `object getAttribute(String name)`: 通过 key 来获取值
+3. `void removeAttribute(String name)`: 通过 key 来删除数据
+
+```java
+@WebServlet("/demo7")
+public class Servlet_07_HttpServlet请求转发 extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // 设置共享数据
+        request.setAttribute("name", "johny");
+        // 获取请求转发器, 调用方法转发
+        request.getRequestDispatcher("/demo8").forward(request, response);
+    }
+}
+```
+
+
+
+##### Request 获取 ServletContext ( 上下文 )
+
+```java
+@WebServlet("/demo9")
+public class Servlet_09_HttpServlet获取ServletContext extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        ServletContext sc = request.getServletContext();
+        System.out.println(sc);  //  org.apache.catalina.core.ApplicationContextFacade@21dfe549
+    }
+}
+```
+
 
 
 ###### 完 !
