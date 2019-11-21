@@ -7,7 +7,7 @@ java 动态项目的目录结构
 + 项目的根目录: WEB-INF
   + web.xml: web项目的核心配置文件.
   + classes目录: 放置字节码文件的目录.
-  + lib目录: 放置依赖包的 jar 包.
+  + lib目录: 放置依赖的 jar 包.
 
 
 
