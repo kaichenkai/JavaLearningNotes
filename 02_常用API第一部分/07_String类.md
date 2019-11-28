@@ -52,7 +52,7 @@ public class DemoString {
 
 字符串常量池:
 
-![1574060066268](07_String类.assets\1574060066268.png)
+![1574060066268](07_String类.assets/1574060066268.png)
 
 
 
