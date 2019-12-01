@@ -1,4 +1,4 @@
-## request forword 和 response redirect
+## request forward和 response redirect
 
 ##### 请求转发的特点
 
