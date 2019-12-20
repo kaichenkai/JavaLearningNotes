@@ -4,7 +4,7 @@
 
 
 
-##### Spring IOC 容器
+### Spring IOC 容器
 
 Spring 会提供 IOC 容器来管理和容纳我们所开发的各种各样的 bean, 并且我们可以从中获取各种发布在 Spring IOC 容器里的 bean, 并且**通过描述**可以得到它
 
@@ -12,7 +12,7 @@ Spring 会提供 IOC 容器来管理和容纳我们所开发的各种各样的 b
 
 
 
-##### Spring IOC 容器的设计
+### Spring IOC 容器的设计
 
 Spring IOC 容器的设计主要是基于以下两个接口
 

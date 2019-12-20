@@ -1,6 +1,6 @@
 ## Spring AOP
 
-##### AOP: 即 Aspect Oriented Program 面向切面编程
+### AOP: 即 Aspect Oriented Program 面向切面编程
 
 如果说 IOC 是 Spring 的核心, 那么面向切面编程就是 Spring 最为重要的一个功能之一了, 在数据库事务中, 切面编程被广泛应用.
 
@@ -15,13 +15,13 @@
 
 
 
-##### AOP 的目的
+### AOP 的目的
 
 AOP 能够将那些与业务无关, 却为业务模块所共同调用的逻辑或责任 ( 例如事务处理, 日志管理, 权限控制等 ) 封装起来, 便于减少系统的重复代码, 减低模块间的耦合度, 并有利于未来的可扩展性 和 可维护性.
 
 
 
-##### AOP 当中的概念
+### AOP 当中的概念
 
 1. 切入点 (Pointcut): 在哪些类, 哪些方法上切入 (where)
 2. 通知 (Advice): 在方法执行的什么时间 (when: 方法前/方法后/方法前后) 做什么 (what: 增强的功能)
@@ -30,7 +30,7 @@ AOP 能够将那些与业务无关, 却为业务模块所共同调用的逻辑�
 
 
 
-##### AOP 编程
+### AOP 编程
 
 在 com.company.service 包下创建 ProductService 类
 

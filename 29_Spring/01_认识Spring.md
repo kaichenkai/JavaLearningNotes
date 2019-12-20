@@ -4,7 +4,7 @@ Spring 框架是 java 应用最广的框架, 它的成功来源于理念, 而不
 
 
 
-##### 什么是 Spring ?
+### 什么是 Spring ?
 
 1. Spring 是一个轻量级的 DI / IOC 和 AOP 容器的开源框架
 2. Spring 倡导以 "最少侵入" 的方式来管理应用中的代码, 这意味着我们可以随时安装或者卸载 Spring
@@ -13,7 +13,7 @@ Spring 框架是 java 应用最广的框架, 它的成功来源于理念, 而不
 
 
 
-##### IOC：Inverse Of Control
+### IOC：Inverse Of Control
 
 反转控制, 不是什么技术, 而是一种设计思想, 就是将原本在程序中手动创建的控制权, 交由 Spring 框架来管理
 

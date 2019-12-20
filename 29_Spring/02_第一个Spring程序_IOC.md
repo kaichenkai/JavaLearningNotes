@@ -1,6 +1,6 @@
 ## 第一个 Spring 程序
 
-##### 新建一个项目
+### 新建一个项目
 
 命名为 spring
 
@@ -12,7 +12,7 @@
 
 
 
-##### 在 src 目录下创建 com.company.pojo 包
+### 在 src 目录下创建 com.company.pojo 包
 
 新建一个 Source 类
 
@@ -30,7 +30,7 @@ public class Source {
 
 
 
-##### 在 src 目录下新建一个 applicationContext.xml 文件
+### 在 src 目录下新建一个 applicationContext.xml 文件
 
 通过 xml 文件配置的方式装配我们的 bean
 
@@ -51,7 +51,7 @@ public class Source {
 
 
 
-##### 在 src 目录下新建 test 目录, 用来写单元测试
+### 在 src 目录下新建 test 目录, 用来写单元测试
 
 创建 TestSpring 类, 编写 test 方法
 
