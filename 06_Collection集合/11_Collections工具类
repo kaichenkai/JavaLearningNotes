@@ -1,0 +1,41 @@
+## Collections 工具类
+
+### 定义
+
+`Collections`是JDK提供的工具类，同样位于`java.util`包中。它提供了一系列静态方法，能更方便地操作各种集合。
+
+
+
+### `Collections`类提供了一组工具方法来方便使用集合类
+
+- 创建空集合；
+  - 创建空List：`List<T> emptyList()`
+  - 创建空Map：`Map<K, V> emptyMap()`
+  - 创建空Set：`Set<T> emptySet()`
+- 创建单元素集合；
+  - 创建一个元素的List：`List<T> singletonList(T o)`
+  - 创建一个元素的Map：`Map<K, V> singletonMap(K key, V value)`
+  - 创建一个元素的Set：`Set<T> singleton(T o)`
+- 创建不可变集合；
+  - 封装成不可变List：`List<T> unmodifiableList(List<? extends T> list)`
+  - 封装成不可变Set：`Set<T> unmodifiableSet(Set<? extends T> set)`
+  - 封装成不可变Map：`Map<K, V> unmodifiableMap(Map<? extends K, ? extends V> m)`
+- 排序／洗牌等操作。
+  - Collections.sort(list);
+  - Collections.shuffle(list);
+
+
+
+### 线程安全集合
+
+`Collections`还提供了一组方法，可以把线程不安全的集合变为线程安全的集合：
+
+- 变为线程安全的List：`List<T> synchronizedList(List<T> list)`
+- 变为线程安全的Set：`Set<T> synchronizedSet(Set<T> s)`
+- 变为线程安全的Map：`Map<K,V> synchronizedMap(Map<K,V> m)`
+
+
+
+
+
+###### 完

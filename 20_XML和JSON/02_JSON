@@ -1,0 +1,229 @@
+## JSON
+
+### 什么是json?
+
+1. Json指的是 JavaScript 对象表示法 (JavaScript Object Notation)
+2. Json是轻量级的文本数据交换格式
+3. Json独立于语言 *
+4. Json具有自我描述性, 更易理解
+
+Json 使用 JavaScript 语法来描述数据对象, 但是 Json 仍然独立于语言和平台, Json解析器和 Json库支持许多不同的编程语言
+
+这里有意思的是, Json本来是用来表示 JavaScript 对象的一种数据文本格式, 但由于它轻量级, 易于解析/操作 (JavaScript原生支持) 的一些特点, 渐渐的被很多语言支持也就成了一种标准.
+
+
+
+### 为什么使用 Json?
+
+1. 在 Json 之前, 我们通常在网络传输中使用的格式是 XML, 在我们的印象中, XML具有很好的可读性, 并且格式统一, 解析起来也相对比较简单, 为什么摒弃掉 XML 而逐渐的使用起 Json呢?
+
+   主要原因在于: Json 比 XML 更小, 更快, 更易解析.
+
+   - JavaScript 原生支持Json, 解析速度相较 XML 会更快;
+   - XML 解析成 DOM 对象的时候, 浏览器之间会产生差异; [例如 IE 和 FireFox]
+   - Json有很多强大的库能够帮助我们更快更简单的完成工作.
+
+
+
+### Json语法
+
+1. 客户端和服务器交换的数据无非就是两种: 数组或者是对象, Json所表示的数据也就是这两种了
+
+2. Json语法是JavaScript语法的子集, 在JavaScript中用 [] 中括号来表示数组, 用 {} 大括号来表示对象, Json 也是这样. ([] 中括号和 {} 大括号之间是可以相互嵌套的)
+
+3. Json数组:
+
+   [] 内容有些像 ArrayList, 是一个列表
+
+   ```JavaScript
+   var employees = [
+       { "firstName":"Bill" , "lastName":"Gates" }, 
+       { "firstName":"George" , "lastName":"Bush" }, 
+       { "firstName":"Thomas" , "lastName": "Carter" } 
+   ];
+   ```
+
+4. Json对象:
+
+   {} 内容有些像 Map, 是键值对
+
+   ```JavaScript
+   var obj = {
+       age:20,
+       str:"wmyskxz"
+   };
+   ```
+
+
+
+### 解析Json
+
+1. 在解析JSON对象之前，我们需要首先地来创造一个JSON对象:
+
+   ```html
+   <script>
+       var JASONObject = {"name": "我没有三颗心脏", "age": 21};
+   </script>
+   ```
+
+2. 使用 html 解析:
+
+   ```html
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <title>JSON学习</title>
+   </head>
+   <body>
+       <p> 
+           Name:<span id="name"></span><br> 
+           Age:<span id="age"></span><br>
+       </p>
+       <script> 
+           var JASONObject = {"name": "我没有三颗心脏", "age": 21};
+           document.getElementById("name").innerHTML = JASONObject.name;
+           document.getElementById("age").innerHTML = JASONObject.age; 
+       </script>
+   </body>
+   </html>
+   
+   ```
+
+
+
+### Java Json库介绍
+
+1. 在后台有许多支持解析JSON的库，目前对于Java开源的JSON类库有许多，下面我们介绍三种比较常用的JSON库，并进行比对说明，它们分别是：
+
+   - **Gson（项目地址：https://github.com/google/gson)**
+
+     Gson是目前功能最全的Json解析神器，Gson当初是为因应Google公司内部需求而由Google自行研发而来，但自从在2008年五月公开发布第一版后已被许多公司或用户应用。Gson的应用主要为toJson与fromJson两个转换函数，无依赖，不需要例外额外的jar，能够直接跑在JDK上。而在使用这种对象转换之前需先创建好对象的类型以及其成员才能成功的将JSON字符串成功转换成相对应的对象。类里面只要有get和set方法，Gson完全可以将复杂类型的json到bean或bean到json的转换，是JSON解析的神器。
+
+   
+
+   - **FastJson（项目地址：https://github.com/alibaba/fastjson）**
+
+     Fastjson是一个Java语言编写的高性能的JSON处理器,由阿里巴巴公司开发。无依赖，不需要例外额外的jar，能够直接跑在JDK上。FastJson在复杂类型的Bean转换Json上会出现一些问题，可能会出现引用的类型，导致Json转换出错，需要制定引用。FastJson采用独创的算法，将parse的速度提升到极致，超过所有json库。
+
+     
+
+   - **Jackson（项目地址：https://github.com/FasterXML/jackson）**
+
+     相比json-lib框架，Jackson所依赖的jar包较少，简单易用并且性能也要相对高些。而且Jackson社区相对比较活跃，更新速度也比较快。Jackson对于复杂类型的json转换bean会出现问题，一些集合Map，List的转换出现问题。Jackson对于复杂类型的bean转换Json，转换的json格式不是标准的Json格式。
+
+     
+
+2. 到底使用哪一个JSON库呢？
+
+   我看了一些资料，比较印象深刻的是：FastJson在复杂类型的Bean转换Json上会出现一些问题，但是在解析JSON时却是最快的（具体参考：[知乎：fastjson这么快老外为啥还是热衷 jackson?](https://www.zhihu.com/question/44199956)）
+
+   **总结如下：**
+
+   - FastJson的API设计的最简单，最方便使用，直接使用JSON的两个静态方法即可完成四种操作；而Gson和Jackson都需要new一个对象；
+   - 数据量大时，使用Jackson;
+   - 如果有性能要求可以使用Gson/Jackson将bean转换json确保数据的正确性，使用FastJson将Json转换成Bean
+
+
+
+### FastJson库简要使用说明
+
+#### FastJson库简要使用说明
+
+1. Maven依赖：
+
+   ```XML
+   <!-- FastJson库 -->
+   <dependency>
+       <groupId>com.alibaba</groupId>
+       <artifactId>fastjson</artifactId>
+       <version>1.2.47</version>
+   </dependency>
+   ```
+
+2. 使用示例：
+
+   ```java
+   @Test public void tester() { 
+       /* —————————————————— 准备测试数据 —————————————————— */ 
+       Person person1 = new Person(); 
+       person1.setName("我没有三颗心脏1"); 
+       person1.setAge(21); 
+       
+       Person person2 = new Person(); 
+       person2.setName("我没有三颗心脏2"); 
+       person2.setAge(21); 
+       
+       Person person3 = new Person(); 
+       person3.setName("我没有三颗心脏3"); 
+       person3.setAge(21); 
+       
+       List<Person> list = new ArrayList<>(); 
+       list.add(person1); list.add(person2); list.add(person3); 
+       
+       /* —————————————————— 简单的Bean转为JSON —————————————————— */ 
+       String jsonString = JSON.toJSONString(person1); 
+       System.out.println("简单的Bean转为JSON：" + jsonString); 
+       
+       /* —————————————————— JSON转为简单Bean —————————————————— */ 
+       Person personFromJson = JSON.parseObject(jsonString, Person.class); 
+       System.out.println("JSON转为简单Bean：" + personFromJson.toString()); 
+       
+       /* —————————————————— 带泛型的List转JSON —————————————————— */ 
+       String jsonStringFromList = JSON.toJSONString(list); 
+       System.out.println("带泛型的List转JSON：" + jsonStringFromList); 
+       
+       /* —————————————————— JSONz转为带泛型的List —————————————————— */ 
+       List<Person> retList = JSON.parseObject(jsonStringFromList, new TypeReference<List<Person>>() { }); 
+       for (Person tempPerson : retList) { 
+           System.out.println(tempPerson.toString()); 
+       } 
+   } 
+   
+   ------------------结果如下------------------ 
+   简单的Bean转为JSON：{"age":21,"name":"我没有三颗心脏1"} 
+   JSON转为简单Bean：名字为我没有三颗心脏1,年龄21 
+   
+   带泛型的List转JSON：[{"age":21,"name":"我没有三颗心脏1"},{"age":21,"name":"我没有三颗心脏2"},{"age":21,"name":"我没有三颗心脏3"}] 
+   
+   名字为我没有三颗心脏1,年龄21 
+   名字为我没有三颗心脏2,年龄21 
+   名字为我没有三颗心脏3,年龄21
+   
+   ```
+
+
+
+### 在框架中使用Json
+
+1. SpingMVC和SpringBoot一样，都能通过注解的方式获取并返回一串JSON格式的数据，我们使用SpringBoot的一段实例程序来实际说明一下：
+
+   ```java
+   @RequestMapping("/jsonCategory") 
+   @ResponseBody // 该注解表示我们的请求不再交给springmvc处理，而是结合JSON包，将对象解析成JSON字符串
+   public Category jsonCategory() { 
+   	return new Category(123, "我没有三颗心脏");
+   }
+   
+   ```
+
+   在浏览器中访问地址：`localhost:8080/jsonCategory`，会得到JSON数据：
+
+   
+
+2. 我们也可以使用 `@RequestBody` 来获取一串JSON数据：
+
+   ```java
+   @PutMapping("/category") 
+   public void addCategory(@RequestBody Category category) {
+       System.out.println("springboot接受到浏览器以JSON格式提交的数据：" + category.getId() + category.getName()); 
+   }
+   ```
+
+**注意: Spring4 之后新加入了 `@RestController` 注解，是@ResponseBody和@Controller的组合注解，用于返回JSON数据。** 
+
+
+
+
+
+###### 完
