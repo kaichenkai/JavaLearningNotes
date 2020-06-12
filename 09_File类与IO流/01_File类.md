@@ -2,7 +2,7 @@
 
 `java.io.File`
 
-文件和目录路径名的抽象表示形式, 对文件或目录进行操作
+文件和目录路径名的抽象表示形式, 对**文件或目录**进行操作
 
 构造方法:
 
@@ -10,6 +10,10 @@
 2. `File(String parent, String child)`:
 3. `File(String,  pathname)`: 
 4. `File(URI uri)`:
+
+**因为 Windows 和 Linux 的路径分隔符不同, File 对象有一个静态变量用于表示当前平台的系统分割符**
+
+`System.out.println(File.separator)`
 
 
 
@@ -45,7 +49,7 @@
 
 1. `public boolean createNewFile()`: 当且仅当该名称的文件不存在时, 才创建新文件 (路径错误会报错)
 
-2. `public boolean delete()`: 删除由此 File 表示的文件或目录 (文件或目录不存在时返回 false)
+2. `public boolean delete()`: 删除由此 File 表示的文件或目录 (文件或目录不存在时返回 false, 当前目录必须为空才能删除成功)
 
    **直接在硬盘上刷数据, 不走回收站, 谨慎删除**
 
@@ -54,4 +58,8 @@
 4. `public boolean mkdirs()`: 递归创建
 
 
+
+
+
+###### 完
 
