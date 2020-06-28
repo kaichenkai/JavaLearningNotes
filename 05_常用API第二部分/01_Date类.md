@@ -14,10 +14,6 @@ unix 时间戳是指离时间原点的毫秒值
 
 获取当前日期时间的unix时间戳:
 
-把毫秒值转换为 Date 日期
-
-
-
 ```java
 // 获取当前unix时间戳
 import java.util.Date;
@@ -29,9 +25,14 @@ public class Main {
         System.out.println(i);  // 1571926743797
     }
 }
+
+// 当前日期的毫秒数
+// new Date().getTime() 和 System.currentTimeMillis() 是一样的
 ```
 
 
+
+把毫秒值转换为 Date 日期
 
 ```java
 // 把时间戳转换为日期时间

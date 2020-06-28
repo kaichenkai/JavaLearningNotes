@@ -15,7 +15,10 @@ StringBuilder 可以支持链式操作，实现链式操作的关键是返回实
 常用成员方法:
 
 1. append (可添加任意类型数据的字符串形式)
-2. toString (StringBuilder 和 String  可以互相转换)
+2. delete: 相当于 subString
+3. insert: 插入字符或字符串
+4. reverse: 反转
+5. toString (StringBuilder 和 String  可以互相转换)
 
 
 
