@@ -1,0 +1,56 @@
+## 字节流
+
+InputStream 和 OutputStream 是**字节流**, 用于以字节的形式读取和写入数据(在读取数据时, 如果没有指定字节数组, 默认是读取单个字节数据)
+
+同时也是抽象类, 只提供方法声明, 不提供方法的具体实现;
+
+FileInputStream 和 FileOutputStream 是 InputStream 的子类, 以 FileInputStream 为例进行文件读取
+
+
+
+### 文件字节输入流
+
+如下代码, 建立一个文件输入流, 这个流可以用来把文件中的数据读取到 JVM(内存)
+
+```java
+public class Demo02InputStream {
+    public static void main(String[] args) throws IOException {
+        File file = new File("test2");
+        //对象是否实现了java.lang.AutoCloseable接口，如果实现了，就自动加上finally语句并调用close()方法
+        //InputStream和OutputStream都实现了这个接口，因此，都可以用在try(resource)中
+        try (InputStream is = new FileInputStream(file)) { // 相当于 python 中的 with open 上下文写法
+            byte[] bytes = new byte[(int) file.length()];//当文件真实存在时才能获取文件长度
+            is.read(bytes);
+            for (byte b : bytes) {
+                System.out.println(b);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+
+
+### 文件字节输出流
+
+```java
+public class Demo03OutputStream {
+    public static void main(String[] args) {  // 写入 HelloWorld
+//        byte[] bData = new byte[] {72, 101, 108, 108, 111};
+        File file = new File("test");
+        try (OutputStream output = new FileOutputStream(file)) {//当文件不存在时会自动创建, 如果是文件的父级目录不存在时, 会抛出异常
+            byte[] bytes = new byte[] {64, 65};
+            output.write(bytes);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+
+
+###### 完
+

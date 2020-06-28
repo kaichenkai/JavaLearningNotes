@@ -27,13 +27,17 @@
 
 4. `public long  length`: 返回由此 File  表示的文件长度 (字节长度, Unicode, 中文占两个字节)
 
-5. `toString`: 
+5. `public long lastModified()`: 返回文件的最后修改时间
+
+6. `toString`: 
 
    ```java
    public String toString() {
        return getPath();
    }
    ```
+
+**注意:** **需要在 file 对象的确实存在的情况下, 才可以看到对应的文件长度、修改时间等信息**; 否则返回 0
 
 
 
