@@ -30,7 +30,7 @@ public class Main {
     public static void main(String[] args) {
         Calendar c = Calendar.getInstance();  // 直接获取对象, 多态写法
 
-        // 获取当前时间
+        // 通过日历对象得到日期对象
         Date currentTime = c.getTime();
 
         // 设置年份
