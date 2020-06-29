@@ -76,6 +76,7 @@ List 是按索引顺序访问的长度可变的有序链表, 优先使用 **Arra
 - 在指定索引添加一个元素：`void add(int index, E e)`
 - 删除指定索引的元素：`int remove(int index)`
 - 删除某个元素：`int remove(Object e)`
+- 替换某个元素(索引不能越界)：`E set(int index, E e)`
 - 获取指定索引的元素：`E get(int index)`
 - 获取链表大小（包含元素的个数）：`int size()`
 
