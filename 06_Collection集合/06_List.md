@@ -45,6 +45,27 @@ List 是按索引顺序访问的长度可变的有序链表, 优先使用 **Arra
 
 
 
+### 操作List对象
+
+考察`List<E>`接口，可以看到几个主要的接口方法：
+
+- 在末尾添加一个元素：`void add(E e)`
+- 在指定索引添加一个元素：`void add(int index, E e)`
+- 删除指定索引的元素：`int remove(int index)`
+- 删除某个元素：`int remove(Object e)`
+- 替换某个元素(索引不能越界)：`E set(int index, E e)`
+- 获取指定索引的元素：`E get(int index)`
+- 获取链表大小（包含元素的个数）：`int size()`
+
+索引超出异常
+
+```java
+List<String> list = new ArrayList<>();
+System.out.println(list.get(0));  //java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+```
+
+
+
 ### List 可以和 Array 相互转换
 
 1. List --> Array
@@ -68,23 +89,21 @@ List 是按索引顺序访问的长度可变的有序链表, 优先使用 **Arra
 
 
 
-### 操作List对象
-
-考察`List<E>`接口，可以看到几个主要的接口方法：
-
-- 在末尾添加一个元素：`void add(E e)`
-- 在指定索引添加一个元素：`void add(int index, E e)`
-- 删除指定索引的元素：`int remove(int index)`
-- 删除某个元素：`int remove(Object e)`
-- 替换某个元素(索引不能越界)：`E set(int index, E e)`
-- 获取指定索引的元素：`E get(int index)`
-- 获取链表大小（包含元素的个数）：`int size()`
-
-索引超出异常
+### 把另一个容器的所有对象都加进来 (addAll)
 
 ```java
-List<String> list = new ArrayList<>();
-System.out.println(list.get(0));  //java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+List list1 = new ArrayList();
+list1.add(new Person("test", 10));
+list1.addAll(list);
+System.out.println(list1);
+```
+
+
+
+### 清空 
+
+```java
+list1.clear();
 ```
 
 

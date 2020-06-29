@@ -2,7 +2,7 @@
 
 ### 定义
 
-java.util 包提供了集合类: Collection, 它是除 Map 外所有其他集合类的根接口, java.util 包主要提供了以下三种类型的集合
+java.util 包提供了集合类: Collection, 它是**除 Map 外**所有其他集合类的根接口, java.util 包主要提供了以下三种类型的集合
 
 - List: 一种有序列表的集合, 例如, 按索引排列的 Student 的 List
 - Set: 一种保证没有重复元素的集合, 例如, 所有无重复名称的 Student 的 Set
@@ -17,6 +17,12 @@ Java 集合的设计有几个特点:
   ```java
   List<String> list = new ArrayList<>(); //只能放入String类型的值
   ```
+
+
+
+### 关系图
+
+![1593416787850](02_Collection.assets/1593416787850.png)
 
 
 

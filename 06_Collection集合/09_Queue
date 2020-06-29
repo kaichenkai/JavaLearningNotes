@@ -33,10 +33,10 @@
    public static void main(String[] args) {
        Queue<String> q = new LinkedList<>();
        //添加元素
-       System.out.println(((LinkedList<String>) q).add("AppleOne"));//true
-       System.out.println(((LinkedList<String>) q).offer("AppleTwo"));//true
-       System.out.println(((LinkedList<String>) q).offer("AppleThree"));//true
-       System.out.println(((LinkedList<String>) q).offer("AppleFour"));//true
+       System.out.println(q.add("AppleOne"));//true
+       System.out.println(q.offer("AppleTwo"));//true
+       System.out.println(q.offer("AppleThree"));//true
+       System.out.println(q.offer("AppleFour"));//true
        //取出元素并删除
        System.out.println(q.remove());
        System.out.println(q.poll());
