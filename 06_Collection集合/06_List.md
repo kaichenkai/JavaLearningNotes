@@ -86,6 +86,24 @@ System.out.println(list.get(0));  //java.lang.IndexOutOfBoundsException: Index: 
        System.out.println(s);
    }
    ```
+   
+   不过，这样做有些坑要注意：
+   
+   - 这样做生成的list，是定长的。也就是说，如果你对它做add或者remove，都会抛UnsupportedOperationException。
+   
+   - 如果修改数组的值，list中的对应值也会改变！
+   
+     **Arrays.asList() 返回的是Arrays内部静态类，而不是Java.util.ArrayList的类。****这个java.util.Arrays.ArrayList有set(),get(),contains()方法，但是没有任何add() 方法，所以它是固定大小的**
+   
+   如果希望避免这两个坑，请改用这个方式
+   
+   ```java
+   Hero[] heroes = new Hero[]{new Hero("one"), new Hero("two"), new Hero("three")};
+   List<Hero> list = new ArrayList<>();
+   Collections.addAll(list, heroes);
+   list.add(new Hero("four"));
+   System.out.println(list);
+   ```
 
 
 
@@ -103,7 +121,7 @@ System.out.println(list1);
 ### 清空 
 
 ```java
-list1.clear();
+arrayList.clear();
 ```
 
 
