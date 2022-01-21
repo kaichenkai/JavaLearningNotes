@@ -32,6 +32,8 @@ public class DemoArrayList {
 
 `public boolean add(E e)`：向集合中添加元素，元素的类型应与泛型一致，返回值是boolean类型
 
+`public boolean add(int index, E e)`：向集合中指定索引位置添加元素，元素的类型应与泛型一致，返回值是boolean类型
+
 `public E get(int index)`：根据索引值从集合中获取元素，返回元素类型与泛型一致
 
 `public E remove(int index)`：根据索引值从集合中删除元素，返回元素类型与泛型一致
